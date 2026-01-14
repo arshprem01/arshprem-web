@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="h-full">
+
+<head>
+  <title>Arsh | CS Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Myweb">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="csrf-param" content="authenticity_token" />
+  <meta name="csrf-token"
+    content="yeI1LGaL_su2Jw6ToCk_ODfBS8om4uGflym2-JARMXvqZZ-6w-QzUKxiRGaEWuCOSvF-L_9EyMD_gPunKd3CNQ" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="assets/application-8b441ae0.css" data-turbo-track="reload" />
+  <link rel="stylesheet" href="assets/tailwind-ab1cb9a8.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-bfcdf840.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-ad2c7b86.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js"
+  }
+}</script>
+  <link rel="modulepreload" href="assets/application-bfcdf840.js">
+  <link rel="modulepreload" href="assets/turbo.min-ad2c7b86.js">
+  <link rel="modulepreload" href="assets/stimulus.min-4b1e420e.js">
+  <link rel="modulepreload" href="assets/stimulus-loading-1fc53fe7.js">
+  <link rel="modulepreload" href="assets/controllers/application-3affb389.js">
+  <link rel="modulepreload" href="assets/controllers/hello_controller-708796bd.js">
+  <link rel="modulepreload" href="assets/controllers/index-ee64e1f1.js">
+  <script type="module">import "application"</script>
+</head>
+
+<body class="h-full anti-aliased selection:bg-primary selection:text-white overflow-x-hidden">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 minimal-nav transition-all duration-300">
+    <div class="container mx-auto px-6 h-24 flex items-center justify-between">
+      <!-- Logo -->
+      <a class="flex items-center gap-2 group" href="index.html">
+        <span class="text-3xl font-black tracking-tighter group-hover:opacity-70 transition-opacity">ARSH PREM</span>
+      </a>
+      <div class="hidden md:flex items-center space-x-12">
+        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+          href="about.html">About Me</a>
+        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+          href="projects.html">MY WORKs</a>
+        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+          href="certificates.html">Certificates</a>
+        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+          href="blog.html">Blog</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-primary p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="pt-24 min-h-screen">
+    <!-- BEGIN app/views/pages/projects.html.erb
+-->
+    <div class="space-y-20 py-10">
+      <!-- Page Header -->
+      <div class="space-y-4 max-w-3xl">
+        <div class="flex items-center gap-4 text-secondary">
+          <span class="w-12 h-[1px] bg-secondary"></span>
+          <span class="uppercase tracking-widest text-sm font-medium">My Works (Dynamic)</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary">
+          My Works
+        </h1>
+        <p class="text-secondary text-xl font-light max-w-2xl">
+          A curation of digital products, websites, and experiences I've crafted. Loaded dynamically from CSV.
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <!-- Content will be injected here by JavaScript -->
+      </div>
+    </div>
+
+    <!-- END app/views/pages/projects.html.erb -->
+  </main>
+
+  <footer class="border-t border-gray-100 py-12 mt-20 bg-tertiary">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+
+      <div class="flex gap-6">
+        <a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank"
+          class="text-secondary hover:text-primary transition-colors text-sm uppercase">LinkedIn</a>
+        <a href="https://github.com/arshprem01" target="_blank"
+          class="text-secondary hover:text-primary transition-colors text-sm uppercase">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('projects.csv')
+        .then(response => response.text())
+        .then(data => {
+          const container = document.getElementById('projects-container');
+          const rows = data.split('\n');
+          const headers = rows[0].split(',');
+
+          // Start from index 1 to skip header
+          for (let i = 1; i < rows.length; i++) {
+            if (rows[i].trim() === '') continue;
+
+            const cols = rows[i].split(',');
+            // Map columns based on our CSV structure: Title,Year,Category,Image,Link
+            // Note: This simple split might fail if fields contain commas, but for this demo it is sufficient.
+            const title = cols[0];
+            const year = cols[1];
+            const category = cols[2];
+            const imageInfo = cols[3];
+            const link = cols[4];
+
+            let imageHtml;
+            if (imageInfo.includes('.')) {
+              // If it has an extension, treat as image URL
+              imageHtml = `<img src="${imageInfo}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">`;
+            } else {
+              // Otherwise treat as placeholder text
+              imageHtml = `
+                  <div class="w-full h-full bg-gray-200 group-hover:bg-gray-300 transition-colors duration-500 relative flex items-center justify-center">
+                     <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">${imageInfo}</span>
+                  </div>
+                `;
+            }
+
+            const projectCard = `
+                <div class="group flex flex-col space-y-6 cursor-pointer">
+                  <!-- Project Image -->
+                  <div class="aspect-[4/3] bg-tertiary overflow-hidden">
+                    ${imageHtml}
+                  </div>
+
+                  <div class="space-y-2">
+                    <div class="flex justify-between items-baseline border-b border-gray-200 pb-4 group-hover:border-primary transition-colors">
+                      <h3 class="text-2xl font-bold text-primary">${title}</h3>
+                      <span class="text-sm text-secondary group-hover:text-primary transition-colors">${year}</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                       <span class="text-secondary font-medium uppercase tracking-wide">${category}</span>
+                       <span class="text-primary font-bold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">View Case Study &rarr;</span>
+                    </div>
+                  </div>
+                </div>
+              `;
+
+            container.innerHTML += projectCard;
+          }
+        })
+        .catch(error => console.error('Error loading CSV:', error));
+    });
+  </script>
+</body>
+
+</html>

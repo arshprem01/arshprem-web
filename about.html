@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="h-full">
+
+<head>
+  <title>Arsh | CS Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Myweb">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="csrf-param" content="authenticity_token" />
+  <meta name="csrf-token"
+    content="7Sw6ce-aMvyzPfEk82ghXAvuG5y8VZLsTz5LYaFix0XOq5DnSvX_Z6l4u9HXG_7qdt4ueWXzu7MnlwY-GK40Cw" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+
+
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="assets/application-8b441ae0.css" data-turbo-track="reload" />
+  <link rel="stylesheet" href="assets/tailwind-ab1cb9a8.css" data-turbo-track="reload" />
+  <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-bfcdf840.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-ad2c7b86.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js"
+  }
+}</script>
+  <link rel="modulepreload" href="assets/application-bfcdf840.js">
+  <link rel="modulepreload" href="assets/turbo.min-ad2c7b86.js">
+  <link rel="modulepreload" href="assets/stimulus.min-4b1e420e.js">
+  <link rel="modulepreload" href="assets/stimulus-loading-1fc53fe7.js">
+  <link rel="modulepreload" href="assets/controllers/application-3affb389.js">
+  <link rel="modulepreload" href="assets/controllers/hello_controller-708796bd.js">
+  <link rel="modulepreload" href="assets/controllers/index-ee64e1f1.js">
+  <script type="module">import "application"</script>
+</head>
+
+<body class="h-full anti-aliased selection:bg-primary selection:text-white overflow-x-hidden">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 minimal-nav transition-all duration-300">
+    <div class="container mx-auto px-6 h-24 flex items-center justify-between">
+      <!-- Logo -->
+      <a class="flex items-center gap-2 group" href="index.html">
+        <span class="text-3xl font-black tracking-tighter group-hover:opacity-70 transition-opacity">ARSH PREM</span>
+      </a>
+      <div class="hidden md:flex items-center space-x-12">
+        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+          href="about.html">About Me</a>
+        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+          href="projects.html">MY WORKs</a>
+        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+          href="certificates.html">Certificates</a>
+        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+          href="blog.html">Blog</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-primary p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="pt-24 min-h-screen">
+    <!-- BEGIN app/views/pages/about.html.erb
+-->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 py-10">
+
+      <!-- Sidebar / Role Title -->
+      <div class="md:col-span-4 lg:col-span-3 space-y-8 sticky top-32 self-start">
+
+
+        <div>
+          <h2 class="text-sm uppercase tracking-widest text-secondary font-medium mb-2">Connect</h2>
+          <div class="flex flex-col gap-2 pl-4">
+            <a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank"
+              class="no-underline text-secondary hover:text-primary transition-colors">LinkedIn</a>
+            <a href="https://github.com/arshprem01" target="_blank"
+              class="no-underline text-secondary hover:text-primary transition-colors">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="md:col-span-8 lg:col-span-9 space-y-24">
+
+        <!-- Bio -->
+        <section>
+          <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary mb-12">
+            About Me
+          </h1>
+          <div class="text-xl md:text-2xl leading-relaxed text-secondary font-light space-y-8 max-w-3xl">
+            <p class="text-primary">
+              Hi! I'm Arsh. I believe that good code is like good design — invisible but powerful.
+            </p>
+            <p>
+              My journey into coding started with curiosity and has evolved into a disciplined pursuit of building
+              scalable, user-centric applications. I combine technical depth in Ruby on Rails and React with a sharp eye
+              for minimalist aesthetics.
+            </p>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="border-t border-gray-200 pt-16">
+          <h2 class="text-3xl font-bold text-primary mb-12">Experience</h2>
+
+          <div class="space-y-12">
+            <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all">
+              <div class="text-secondary font-mono text-sm">2023 - 2027</div>
+              <div class="md:col-span-3 space-y-2">
+                <h3 class="text-xl font-bold text-primary">B.Tech in Computer Science</h3>
+                <p class="text-secondary">SRM Institute of Science and Technology</p>
+                <p class="text-gray-500 mt-2 text-sm">CGPA: 8.16</p>
+              </div>
+            </div>
+
+            <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all">
+              <div class="text-secondary font-mono text-sm">Dec 2025 - Jan 2026</div>
+              <div class="md:col-span-3 space-y-2">
+                <h3 class="text-xl font-bold text-primary">Software Engineer Intern</h3>
+                <p class="text-secondary">Blubirch</p>
+                <p class="text-gray-500 mt-2 text-sm max-w-xl">
+                  Worked on backend development using Ruby on Rails and RESTful APIs, contributing to internal IT
+                  systems and application features.
+                </p>
+              </div>
+            </div>
+
+            <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all">
+              <div class="text-secondary font-mono text-sm">June 2025 - July 2025</div>
+              <div class="md:col-span-3 space-y-2">
+                <h3 class="text-xl font-bold text-primary">Tech Intern</h3>
+                <p class="text-secondary">Youth for Seva</p>
+                <p class="text-gray-500 mt-2 text-sm max-w-xl">
+                  Contributed to development and enhancement of technical features supporting organizational workflows.
+                  Collaborated with cross-functional teams to analyze requirements.
+                </p>
+              </div>
+            </div>
+
+            <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all">
+              <div class="text-secondary font-mono text-sm">Jan 2025 - Present</div>
+              <div class="md:col-span-3 space-y-2">
+                <h3 class="text-xl font-bold text-primary">President, Model United Nations (MUN) Club</h3>
+                <p class="text-secondary">SRM Institute of Science and Technology</p>
+                <p class="text-gray-500 mt-2 text-sm max-w-xl">
+                  Led organization of MUN conferences, debates, and training sessions; managed core team and coordinated
+                  inter-departmental activities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="border-t border-gray-200 pt-16">
+          <h2 class="text-3xl font-bold text-primary mb-12">Technical Skills</h2>
+          <div class="flex flex-wrap gap-4">
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              Ruby on Rails
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              Node.js
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              JavaScript
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              React.js
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              PostgreSQL
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              SQLite
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              Python
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              Java
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              C++
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              Docker
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              Git
+            </span>
+            <span
+              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              Antigravity
+            </span>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- END app/views/pages/about.html.erb -->
+  </main>
+
+  <footer class="border-t border-gray-100 py-12 mt-20 bg-tertiary">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+
+      <div class="flex gap-6">
+        <a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank"
+          class="text-secondary hover:text-primary transition-colors text-sm uppercase">LinkedIn</a>
+        <a href="https://github.com/arshprem01" target="_blank"
+          class="text-secondary hover:text-primary transition-colors text-sm uppercase">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+<!-- END app/views/layouts/application.html.erb -->
