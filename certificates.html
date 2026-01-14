@@ -108,53 +108,8 @@
       </div>
 
       <!-- Certificates Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-
-        <div class="group flex flex-col space-y-6 cursor-pointer">
-          <!-- Certificate Image Placeholder -->
-          <div class="aspect-[4/3] bg-tertiary overflow-hidden border border-gray-100">
-            <div
-              class="w-full h-full bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500 relative flex items-center justify-center">
-              <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">CERT</span>
-            </div>
-          </div>
-
-          <div class="space-y-2">
-            <div
-              class="flex justify-between items-baseline border-b border-gray-200 pb-4 group-hover:border-primary transition-colors">
-              <h3 class="text-xl font-bold text-primary max-w-[80%]">IBM Full Stack Software Developer</h3>
-              <span class="text-sm text-secondary group-hover:text-primary transition-colors">2024</span>
-            </div>
-            <div class="space-y-1">
-              <p class="text-secondary font-medium uppercase tracking-wide text-xs">IBM</p>
-              <p class="text-gray-500 text-sm leading-relaxed">Professional Certificate covering Cloud Computing,
-                DevOps, and Full Stack Development.</p>
-            </div>
-          </div>
-        </div>
-        <div class="group flex flex-col space-y-6 cursor-pointer">
-          <!-- Certificate Image Placeholder -->
-          <div class="aspect-[4/3] bg-tertiary overflow-hidden border border-gray-100">
-            <div
-              class="w-full h-full bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500 relative flex items-center justify-center">
-              <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">CERT</span>
-            </div>
-          </div>
-
-          <div class="space-y-2">
-            <div
-              class="flex justify-between items-baseline border-b border-gray-200 pb-4 group-hover:border-primary transition-colors">
-              <h3 class="text-xl font-bold text-primary max-w-[80%]">Guest Lecture – Appreciation Certificate</h3>
-              <span class="text-sm text-secondary group-hover:text-primary transition-colors">2024</span>
-            </div>
-            <div class="space-y-1">
-              <p class="text-secondary font-medium uppercase tracking-wide text-xs">SRM Institute of Science and
-                Technology</p>
-              <p class="text-gray-500 text-sm leading-relaxed">Delivered a guest lecture on “Arduino Basics” at a
-                National-Level Technical Workshop.</p>
-            </div>
-          </div>
-        </div>
+      <div id="certificates-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <!-- Certificates will be loaded here dynamically -->
       </div>
     </div>
     <!-- END app/views/pages/certificates.html.erb -->
@@ -176,7 +131,6 @@
       const mobileBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
       if (mobileBtn && mobileMenu) {
-        // Remove existing listener to be safe (though usually new elements)
         const newBtn = mobileBtn.cloneNode(true);
         mobileBtn.parentNode.replaceChild(newBtn, mobileBtn);
         newBtn.addEventListener('click', (e) => {
@@ -185,8 +139,106 @@
         });
       }
     }
-    document.addEventListener('DOMContentLoaded', initMobileMenu);
-    document.addEventListener('turbo:load', initMobileMenu);
+
+    function parseCSV(text) {
+      // Robust CSV parsing handling quotes and commas within quotes
+      const lines = text.split('\n');
+      const headers = lines[0].split(',').map(h => h.trim());
+      const data = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line) continue;
+
+        const row = {};
+        let currentVal = '';
+        let inQuotes = false;
+        let colIndex = 0;
+
+        for (let j = 0; j < line.length; j++) {
+          const char = line[j];
+
+          if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            row[headers[colIndex]] = currentVal.trim().replace(/^"|"$/g, ''); // Remove surrounding quotes
+            currentVal = '';
+            colIndex++;
+          } else {
+            currentVal += char;
+          }
+        }
+        // Last column
+        if (colIndex < headers.length) {
+          row[headers[colIndex]] = currentVal.trim().replace(/^"|"$/g, '');
+        }
+
+        data.push(row);
+      }
+      return data;
+    }
+
+    function loadCertificates() {
+      const container = document.getElementById('certificates-container');
+      if (!container) return;
+
+      // Clear container to prevent duplicates on reload
+      container.innerHTML = '';
+
+      fetch('certificates.csv')
+        .then(response => {
+          if (!response.ok) throw new Error("Failed to load CSV");
+          return response.text();
+        })
+        .then(data => {
+          const certificates = parseCSV(data);
+
+          if (certificates.length === 0) {
+            container.innerHTML = '<p class="text-gray-500">No certificates found.</p>';
+            return;
+          }
+
+          certificates.forEach(cert => {
+            const imageHtml = `
+                <div class="w-full h-full bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500 relative flex items-center justify-center">
+                  <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">${cert.Image || 'CERT'}</span>
+                </div>
+            `;
+
+            const card = `
+              <div class="group flex flex-col space-y-6 cursor-pointer">
+                <div class="aspect-[4/3] bg-tertiary overflow-hidden border border-gray-100">
+                  ${imageHtml}
+                </div>
+                <div class="space-y-2">
+                  <div class="flex justify-between items-baseline border-b border-gray-200 pb-4 group-hover:border-primary transition-colors">
+                    <h3 class="text-xl font-bold text-primary max-w-[80%]">${cert.Title}</h3>
+                    <span class="text-sm text-secondary group-hover:text-primary transition-colors">${cert.Year}</span>
+                  </div>
+                  <div class="space-y-1">
+                    <p class="text-secondary font-medium uppercase tracking-wide text-xs">${cert.Issuer}</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">${cert.Description}</p>
+                  </div>
+                </div>
+              </div>
+            `;
+            container.innerHTML += card;
+          });
+        })
+        .catch(err => {
+          console.error('Error loading certificates:', err);
+          container.innerHTML = '<p class="text-red-500">Error loading certificates. Please check console.</p>';
+        });
+    }
+
+    // Initialize scripts
+    function init() {
+      initMobileMenu();
+      loadCertificates();
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('turbo:load', init);
   </script>
 </body>
 
