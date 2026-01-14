@@ -50,7 +50,7 @@
 
 <body class="h-full anti-aliased selection:bg-primary selection:text-white overflow-x-hidden">
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 minimal-nav transition-all duration-300">
+  <nav class="fixed top-0 left-0 right-0 z-50 minimal-nav transition-all duration-300" style="background-color: white;">
     <div class="container mx-auto px-6 h-24 flex items-center justify-between">
       <!-- Logo -->
       <a class="flex items-center gap-2 group" href="index.html">
@@ -68,11 +68,24 @@
       </div>
 
       <!-- Mobile Menu Button -->
-      <button class="md:hidden text-primary p-2">
+      <button id="mobile-menu-btn" class="md:hidden text-primary p-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" style="background-color: white;"
+      class="hidden md:hidden absolute top-24 left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col space-y-4 shadow-lg z-50">
+      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+        href="about.html">About Me</a>
+      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+        href="projects.html">My Works</a>
+      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+        href="certificates.html">Certificates</a>
+      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
+        href="blog.html">Blog</a>
     </div>
   </nav>
 
@@ -246,6 +259,22 @@
       </div>
     </div>
   </footer>
+  <script>
+    function initMobileMenu() {
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) {
+        const newBtn = mobileBtn.cloneNode(true);
+        mobileBtn.parentNode.replaceChild(newBtn, mobileBtn);
+        newBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    }
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+    document.addEventListener('turbo:load', initMobileMenu);
+  </script>
 </body>
 
 </html>
