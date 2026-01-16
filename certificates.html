@@ -21,9 +21,9 @@
 
 
 
-  <link rel="icon" href="icon.png" type="image/png">
-  <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="images/icon.png" type="image/png">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/icon.png">
 
   <link rel="stylesheet" href="assets/application-8b441ae0.css" data-turbo-track="reload" />
   <link rel="stylesheet" href="assets/tailwind-ab1cb9a8.css" data-turbo-track="reload" />
@@ -203,14 +203,29 @@
           }
 
           certificates.forEach(cert => {
-            const imageHtml = `
-                <div class="w-full h-full bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500 relative flex items-center justify-center">
-                  <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">${cert.Image || 'CERT'}</span>
-                </div>
-            `;
+            const imageSource = cert.Image ? cert.Image.trim() : '';
+            const lowerSource = imageSource.toLowerCase();
+            let imageHtml;
+
+            if (lowerSource.endsWith('.png') || lowerSource.endsWith('.jpg') || lowerSource.endsWith('.jpeg') || lowerSource.endsWith('.gif') || lowerSource.endsWith('.svg') || lowerSource.endsWith('.webp')) {
+              imageHtml = `<img src="${imageSource}" alt="${cert.Title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">`;
+            } else if (lowerSource.endsWith('.pdf')) {
+              imageHtml = `
+                    <div class="w-full h-full bg-red-50 group-hover:bg-red-100 transition-colors duration-500 relative flex flex-col items-center justify-center p-6 text-center">
+                        <svg class="w-12 h-12 text-red-500 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        <span class="text-sm font-medium text-red-600">View PDF</span>
+                    </div>
+                 `;
+            } else {
+              imageHtml = `
+                    <div class="w-full h-full bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500 relative flex items-center justify-center">
+                      <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">${cert.Image || 'CERT'}</span>
+                    </div>
+                `;
+            }
 
             const card = `
-              <div class="group flex flex-col space-y-6 cursor-pointer">
+              <a href="${imageSource}" target="_blank" class="group flex flex-col space-y-6 cursor-pointer block">
                 <div class="aspect-[4/3] bg-tertiary overflow-hidden border border-gray-100">
                   ${imageHtml}
                 </div>
@@ -224,7 +239,7 @@
                     <p class="text-gray-500 text-sm leading-relaxed">${cert.Description}</p>
                   </div>
                 </div>
-              </div>
+              </a>
             `;
             container.innerHTML += card;
           });
