@@ -3,6 +3,7 @@
 
 <head>
   <title>Arsh | CS Portfolio</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Myweb">
@@ -45,6 +46,7 @@
   <link rel="modulepreload" href="assets/controllers/hello_controller-708796bd.js">
   <link rel="modulepreload" href="assets/controllers/index-ee64e1f1.js">
   <script type="module">import "application"</script>
+  <script src="assets/js/translations.js"></script>
 </head>
 
 <body class="h-full anti-aliased selection:bg-primary selection:text-white overflow-x-hidden">
@@ -57,34 +59,45 @@
       </a>
       <div class="hidden md:flex items-center space-x-12">
         <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="about.html">About Me</a>
+          href="about.html" data-i18n="nav.about">About Me</a>
         <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="projects.html">MY WORKs</a>
+          href="projects.html" data-i18n="nav.works">MY WORKs</a>
         <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="certificates.html">Certificates</a>
+          href="certificates.html" data-i18n="nav.certs">Certificates</a>
         <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="blog.html">Blog</a>
+          href="blog.html" data-i18n="nav.blog">Blog</a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden text-primary p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <div class="flex items-center gap-4">
+        <!-- Language Toggle -->
+        <div class="flex items-center gap-2 text-sm">
+          <button onclick="setLanguage('en')" class="lang-btn hover:text-primary transition-colors"
+            data-lang="en">EN</button>
+          <span class="text-gray-300">|</span>
+          <button onclick="setLanguage('jp')" class="lang-btn hover:text-primary transition-colors text-gray-400"
+            data-lang="jp">JP</button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-primary p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" style="background-color: white;"
       class="hidden md:hidden absolute top-24 left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col space-y-4 shadow-lg z-50">
       <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="about.html">About Me</a>
+        href="about.html" data-i18n="nav.about">About Me</a>
       <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="projects.html">My Works</a>
+        href="projects.html" data-i18n="nav.works">My Works</a>
       <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="certificates.html">Certificates</a>
+        href="certificates.html" data-i18n="nav.certs">Certificates</a>
       <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="blog.html">Blog</a>
+        href="blog.html" data-i18n="nav.blog">Blog</a>
     </div>
   </nav>
 
@@ -96,12 +109,12 @@
       <div class="space-y-4 max-w-3xl">
         <div class="flex items-center gap-4 text-secondary">
           <span class="w-12 h-[1px] bg-secondary"></span>
-          <span class="uppercase tracking-widest text-sm font-medium">My Works</span>
+          <span class="uppercase tracking-widest text-sm font-medium" data-i18n="projects.subheader">My Works</span>
         </div>
-        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary">
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary" data-i18n="projects.title">
           My Works
         </h1>
-        <p class="text-secondary text-xl font-light max-w-2xl">
+        <p class="text-secondary text-xl font-light max-w-2xl" data-i18n="projects.desc">
           A curation of digital products, websites, and experiences I've crafted.
         </p>
       </div>

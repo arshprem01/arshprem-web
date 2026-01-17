@@ -3,6 +3,7 @@
 
 <head>
   <title>Arsh | CS Portfolio</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Myweb">
@@ -46,6 +47,7 @@
   <link rel="modulepreload" href="assets/controllers/hello_controller-708796bd.js">
   <link rel="modulepreload" href="assets/controllers/index-ee64e1f1.js">
   <script type="module">import "application"</script>
+  <script src="assets/js/translations.js"></script>
 </head>
 
 <body class="h-full anti-aliased selection:bg-primary selection:text-white overflow-x-hidden">
@@ -58,34 +60,45 @@
       </a>
       <div class="hidden md:flex items-center space-x-12">
         <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="about.html">About Me</a>
+          href="about.html" data-i18n="nav.about">About Me</a>
         <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="projects.html">MY WORKs</a>
+          href="projects.html" data-i18n="nav.works">MY WORKs</a>
         <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="certificates.html">Certificates</a>
+          href="certificates.html" data-i18n="nav.certs">Certificates</a>
         <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="blog.html">Blog</a>
+          href="blog.html" data-i18n="nav.blog">Blog</a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden text-primary p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <div class="flex items-center gap-4">
+        <!-- Language Toggle -->
+        <div class="flex items-center gap-2 text-sm">
+          <button onclick="setLanguage('en')" class="lang-btn hover:text-primary transition-colors"
+            data-lang="en">EN</button>
+          <span class="text-gray-300">|</span>
+          <button onclick="setLanguage('jp')" class="lang-btn hover:text-primary transition-colors text-gray-400"
+            data-lang="jp">JP</button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-primary p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" style="background-color: white;"
       class="hidden md:hidden absolute top-24 left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col space-y-4 shadow-lg z-50">
       <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="about.html">About Me</a>
+        href="about.html" data-i18n="nav.about">About Me</a>
       <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="projects.html">My Works</a>
+        href="projects.html" data-i18n="nav.works">My Works</a>
       <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="certificates.html">Certificates</a>
+        href="certificates.html" data-i18n="nav.certs">Certificates</a>
       <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="blog.html">Blog</a>
+        href="blog.html" data-i18n="nav.blog">Blog</a>
     </div>
   </nav>
 
@@ -99,7 +112,8 @@
 
 
         <div>
-          <h2 class="text-sm uppercase tracking-widest text-secondary font-medium mb-2">Connect</h2>
+          <h2 class="text-sm uppercase tracking-widest text-secondary font-medium mb-2" data-i18n="about.connect">
+            Connect</h2>
           <div class="flex flex-col gap-2 pl-4">
             <a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank"
               class="no-underline text-secondary hover:text-primary transition-colors">LinkedIn</a>
@@ -114,14 +128,14 @@
 
         <!-- Bio -->
         <section>
-          <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary mb-12">
+          <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary mb-12" data-i18n="about.title">
             About Me
           </h1>
           <div class="text-xl md:text-2xl leading-relaxed text-secondary font-light space-y-8 max-w-3xl">
-            <p class="text-primary">
+            <p class="text-primary" data-i18n="about.bio1">
               Hi! I'm Arsh. I believe that good code is like good design — invisible but powerful.
             </p>
-            <p>
+            <p data-i18n="about.bio2">
               My journey into coding started with curiosity and has evolved into a disciplined pursuit of building
               scalable, user-centric applications. I combine technical depth in Ruby on Rails and React with a sharp eye
               for minimalist aesthetics.
@@ -131,13 +145,13 @@
 
         <!-- Experience -->
         <section class="border-t border-gray-200 pt-16">
-          <h2 class="text-3xl font-bold text-primary mb-12">Experience</h2>
+          <h2 class="text-3xl font-bold text-primary mb-12" data-i18n="about.exp.title">Experience</h2>
 
           <div class="space-y-12">
             <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all">
               <div class="text-secondary font-mono text-sm">2023 - 2027</div>
               <div class="md:col-span-3 space-y-2">
-                <h3 class="text-xl font-bold text-primary">B.Tech in Computer Science</h3>
+                <h3 class="text-xl font-bold text-primary" data-i18n="exp.student">B.Tech in Computer Science</h3>
                 <p class="text-secondary">SRM Institute of Science and Technology</p>
                 <p class="text-gray-500 mt-2 text-sm">CGPA: 8.16</p>
               </div>
@@ -146,7 +160,7 @@
             <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all">
               <div class="text-secondary font-mono text-sm">Dec 2025 - Jan 2026</div>
               <div class="md:col-span-3 space-y-2">
-                <h3 class="text-xl font-bold text-primary">Software Engineer Intern</h3>
+                <h3 class="text-xl font-bold text-primary" data-i18n="exp.intern1">Software Engineer Intern</h3>
                 <p class="text-secondary">Blubirch</p>
                 <p class="text-gray-500 mt-2 text-sm max-w-xl">
                   Worked on backend development using Ruby on Rails and RESTful APIs, contributing to internal IT
@@ -158,7 +172,7 @@
             <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all">
               <div class="text-secondary font-mono text-sm">June 2025 - July 2025</div>
               <div class="md:col-span-3 space-y-2">
-                <h3 class="text-xl font-bold text-primary">Tech Intern</h3>
+                <h3 class="text-xl font-bold text-primary" data-i18n="exp.intern2">Tech Intern</h3>
                 <p class="text-secondary">Youth for Seva</p>
                 <p class="text-gray-500 mt-2 text-sm max-w-xl">
                   Contributed to development and enhancement of technical features supporting organizational workflows.
@@ -170,7 +184,8 @@
             <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all">
               <div class="text-secondary font-mono text-sm">Jan 2025 - Present</div>
               <div class="md:col-span-3 space-y-2">
-                <h3 class="text-xl font-bold text-primary">President, Model United Nations (MUN) Club</h3>
+                <h3 class="text-xl font-bold text-primary" data-i18n="exp.mun">President, Model United Nations (MUN)
+                  Club</h3>
                 <p class="text-secondary">SRM Institute of Science and Technology</p>
                 <p class="text-gray-500 mt-2 text-sm max-w-xl">
                   Led organization of MUN conferences, debates, and training sessions; managed core team and coordinated
@@ -183,7 +198,7 @@
 
         <!-- Skills -->
         <section class="border-t border-gray-200 pt-16">
-          <h2 class="text-3xl font-bold text-primary mb-12">Technical Skills</h2>
+          <h2 class="text-3xl font-bold text-primary mb-12" data-i18n="about.skills.title">Technical Skills</h2>
           <div class="flex flex-wrap gap-4">
             <span
               class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
