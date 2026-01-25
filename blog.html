@@ -121,76 +121,92 @@
       </div>
 
       <!-- Blog Posts Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-
-        <div class="group flex flex-col space-y-6 cursor-pointer">
-          <!-- Post Image Placeholder -->
-          <div class="aspect-[4/3] bg-tertiary overflow-hidden border border-gray-100">
-            <div
-              class="w-full h-full bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500 relative flex items-center justify-center">
-              <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">POST</span>
-            </div>
-          </div>
-
-          <div class="space-y-2">
-            <div
-              class="flex justify-between items-baseline border-b border-gray-200 pb-4 group-hover:border-primary transition-colors">
-              <h3 class="text-xl font-bold text-primary max-w-[80%]">Getting Started with Rails 8</h3>
-              <span class="text-sm text-secondary group-hover:text-primary transition-colors">Jan 12, 2026</span>
-            </div>
-            <div class="space-y-1">
-              <p class="text-secondary font-medium uppercase tracking-wide text-xs">Ruby on Rails</p>
-              <p class="text-gray-500 text-sm leading-relaxed">Exploring the new features and improvements in the latest
-                version of Rails.</p>
-            </div>
-          </div>
-        </div>
-        <div class="group flex flex-col space-y-6 cursor-pointer">
-          <!-- Post Image Placeholder -->
-          <div class="aspect-[4/3] bg-tertiary overflow-hidden border border-gray-100">
-            <div
-              class="w-full h-full bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500 relative flex items-center justify-center">
-              <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">POST</span>
-            </div>
-          </div>
-
-          <div class="space-y-2">
-            <div
-              class="flex justify-between items-baseline border-b border-gray-200 pb-4 group-hover:border-primary transition-colors">
-              <h3 class="text-xl font-bold text-primary max-w-[80%]">Why I use React for Frontend</h3>
-              <span class="text-sm text-secondary group-hover:text-primary transition-colors">Dec 30, 2025</span>
-            </div>
-            <div class="space-y-1">
-              <p class="text-secondary font-medium uppercase tracking-wide text-xs">Frontend</p>
-              <p class="text-gray-500 text-sm leading-relaxed">A deep dive into why React remains my go-to library for
-                building dynamic user interfaces.</p>
-            </div>
-          </div>
-        </div>
-        <div class="group flex flex-col space-y-6 cursor-pointer">
-          <!-- Post Image Placeholder -->
-          <div class="aspect-[4/3] bg-tertiary overflow-hidden border border-gray-100">
-            <div
-              class="w-full h-full bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500 relative flex items-center justify-center">
-              <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">POST</span>
-            </div>
-          </div>
-
-          <div class="space-y-2">
-            <div
-              class="flex justify-between items-baseline border-b border-gray-200 pb-4 group-hover:border-primary transition-colors">
-              <h3 class="text-xl font-bold text-primary max-w-[80%]">My Experience with Docker</h3>
-              <span class="text-sm text-secondary group-hover:text-primary transition-colors">Nov 15, 2025</span>
-            </div>
-            <div class="space-y-1">
-              <p class="text-secondary font-medium uppercase tracking-wide text-xs">DevOps</p>
-              <p class="text-gray-500 text-sm leading-relaxed">How containerization changed my development workflow and
-                deployment strategies.</p>
-            </div>
-          </div>
-        </div>
+      <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <!-- Blog posts will be loaded dynamically from blog.csv -->
       </div>
     </div>
+
+    <script>
+      // Load blog posts from CSV
+      async function loadBlogPosts() {
+        try {
+          const response = await fetch('blog.csv');
+          const csvText = await response.text();
+          const lines = csvText.trim().split('\n');
+          const headers = lines[0].split(',');
+          
+          const blogGrid = document.getElementById('blog-grid');
+          blogGrid.innerHTML = '';
+          
+          // Process each blog post (skip header)
+          for (let i = 1; i < lines.length; i++) {
+            if (!lines[i].trim()) continue;
+            
+            // Parse CSV line (handle commas in fields)
+            const values = parseCSVLine(lines[i]);
+            if (values.length < 4) continue;
+            
+            const [title, date, category, summary, image] = values;
+            
+            const postHTML = `
+              <div class="group flex flex-col space-y-6 cursor-pointer">
+                <!-- Post Image -->
+                <div class="aspect-[4/3] bg-tertiary overflow-hidden border border-gray-100">
+                  ${image && image.trim() ? 
+                    `<img src="${image.trim()}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` :
+                    `<div class="w-full h-full bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500 relative flex items-center justify-center">
+                      <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">POST</span>
+                    </div>`
+                  }
+                </div>
+
+                <div class="space-y-2">
+                  <div class="flex justify-between items-baseline border-b border-gray-200 pb-4 group-hover:border-primary transition-colors">
+                    <h3 class="text-xl font-bold text-primary max-w-[80%]">${title}</h3>
+                    <span class="text-sm text-secondary group-hover:text-primary transition-colors">${date}</span>
+                  </div>
+                  <div class="space-y-1">
+                    <p class="text-secondary font-medium uppercase tracking-wide text-xs">${category}</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">${summary}</p>
+                  </div>
+                </div>
+              </div>
+            `;
+            
+            blogGrid.innerHTML += postHTML;
+          }
+        } catch (error) {
+          console.error('Error loading blog posts:', error);
+        }
+      }
+      
+      // Parse a CSV line handling commas within fields
+      function parseCSVLine(line) {
+        const result = [];
+        let current = '';
+        let inQuotes = false;
+        
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          
+          if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            result.push(current.trim());
+            current = '';
+          } else {
+            current += char;
+          }
+        }
+        result.push(current.trim());
+        
+        return result;
+      }
+      
+      // Load posts on page load
+      document.addEventListener('DOMContentLoaded', loadBlogPosts);
+      document.addEventListener('turbo:load', loadBlogPosts);
+    </script>
     <!-- END app/views/pages/blog.html.erb -->
   </main>
 
