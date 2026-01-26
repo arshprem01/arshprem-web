@@ -48,11 +48,12 @@
   <link rel="modulepreload" href="assets/controllers/index-ee64e1f1.js">
   <script type="module">import "application"</script>
   <script src="assets/js/translations.js"></script>
+  <script src="assets/js/animations.js" defer></script>
 </head>
 
 <body class="h-full anti-aliased selection:bg-primary selection:text-white overflow-x-hidden">
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 minimal-nav transition-all duration-300" style="background-color: white;">
+  <nav class="fixed top-0 left-0 right-0 z-50 minimal-nav transition-all duration-300 glass">
     <div class="container mx-auto px-6 h-24 flex items-center justify-between">
       <!-- Logo -->
       <a class="flex items-center gap-2 group" href="index.html">
@@ -108,14 +109,14 @@
     <div class="space-y-20 py-10">
       <!-- Page Header -->
       <div class="space-y-4 max-w-3xl">
-        <div class="flex items-center gap-4 text-secondary">
+        <div class="flex items-center gap-4 text-secondary fade-in">
           <span class="w-12 h-[1px] bg-secondary"></span>
           <span class="uppercase tracking-widest text-sm font-medium" data-i18n="certs.subheader">Achievements</span>
         </div>
-        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary" data-i18n="certs.title">
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary slide-up" data-i18n="certs.title">
           Certificates
         </h1>
-        <p class="text-secondary text-xl font-light max-w-2xl" data-i18n="certs.desc">
+        <p class="text-secondary text-xl font-light max-w-2xl slide-up slide-up-delay-1" data-i18n="certs.desc">
           Professional certifications and recognitions.
         </p>
       </div>
@@ -221,7 +222,7 @@
             let imageHtml;
 
             if (lowerSource.endsWith('.png') || lowerSource.endsWith('.jpg') || lowerSource.endsWith('.jpeg') || lowerSource.endsWith('.gif') || lowerSource.endsWith('.svg') || lowerSource.endsWith('.webp')) {
-              imageHtml = `<img src="${imageSource}" alt="${cert.Title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">`;
+              imageHtml = `<img src="${imageSource}" alt="${cert.Title}" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">`;
             } else if (lowerSource.endsWith('.pdf')) {
               imageHtml = `
                     <div class="w-full h-full bg-red-50 group-hover:bg-red-100 transition-colors duration-500 relative flex flex-col items-center justify-center p-6 text-center">
@@ -238,7 +239,7 @@
             }
 
             const card = `
-              <a href="${imageSource}" target="_blank" class="group flex flex-col space-y-6 cursor-pointer block">
+              <a href="${imageSource}" target="_blank" class="glass-card tilt-card spotlight p-4 rounded-lg group flex flex-col space-y-6 cursor-pointer block animate-on-scroll">
                 <div class="aspect-[4/3] bg-tertiary overflow-hidden border border-gray-100">
                   ${imageHtml}
                 </div>
@@ -263,6 +264,7 @@
         })
         .finally(() => {
           container.dataset.loading = "false";
+          if (window.initAnimations) window.initAnimations();
         });
     }
 
