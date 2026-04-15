@@ -7,6 +7,8 @@
   <meta name="description" content="Projects by Arsh Prem — web apps, AI systems, and full-stack solutions.">
   <link rel="icon" href="images/icon.png" type="image/png">
   <link rel="stylesheet" href="assets/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
   <nav class="nav" id="navbar"><div class="nav-inner"><a href="index.html" class="nav-logo"><span>ARSH</span><span>PREM</span></a><div class="nav-links"><a href="about.html" class="nav-link">[ ABOUT ME ]</a><a href="projects.html" class="nav-link active">[ WORKS ]</a><a href="certificates.html" class="nav-link">[ CERTIFICATES ]</a><a href="blog.html" class="nav-link">[ BLOG ]</a></div><a href="contact.html" class="nav-contact">CONTACT ME ↗</a><button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></nav>
@@ -28,8 +30,6 @@
   <script>
     document.getElementById('mobile-menu-btn')?.addEventListener('click', () => { document.getElementById('mobile-menu')?.classList.toggle('open'); });
     window.addEventListener('scroll', () => { document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 50); });
-    const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
-    document.querySelectorAll('.anim').forEach(el => obs.observe(el));
 
     fetch('projects.csv').then(r => r.text()).then(data => {
       const container = document.getElementById('projects-container');
@@ -52,5 +52,6 @@
       }
     }).catch(e => console.error(e));
   </script>
+  <script src="assets/gsap-animations.js" defer></script>
 </body>
 </html>

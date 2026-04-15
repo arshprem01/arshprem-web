@@ -7,6 +7,9 @@
   <meta name="description" content="Arsh Prem — CS student & Software Engineer specialized in full-stack development, AI, and backend systems.">
   <link rel="icon" href="images/icon.png" type="image/png">
   <link rel="stylesheet" href="assets/styles.css">
+  <!-- GSAP Animation Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
 
@@ -172,12 +175,6 @@
       document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.anim').forEach(el => observer.observe(el));
-
     // Load featured projects  
     fetch('projects.csv').then(r => r.text()).then(data => {
       const rows = data.split('\n');
@@ -208,5 +205,6 @@
     s.textContent = '@media(max-width:768px){.about-preview-grid{grid-template-columns:1fr!important;}}';
     document.head.appendChild(s);
   </script>
+  <script src="assets/gsap-animations.js" defer></script>
 </body>
 </html>
