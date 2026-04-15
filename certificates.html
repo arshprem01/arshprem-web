@@ -1,283 +1,75 @@
 <!DOCTYPE html>
-<html class="h-full">
-
+<html lang="en">
 <head>
-  <title>Arsh | CS Portfolio</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Myweb">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="csrf-param" content="authenticity_token" />
-  <meta name="csrf-token"
-    content="HlLkj_oVSErKgn4seSxDuDUg9Kzrdx_0Jqie8weq5Aw91U4ZX3qF0dDHNNldX5wOSBDBSTLRNqtOAdOsvmYXQg" />
-
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates — Arsh Prem</title>
+  <meta name="description" content="Professional certifications and recognitions of Arsh Prem.">
   <link rel="icon" href="images/icon.png" type="image/png">
-  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="images/icon.png">
-
-  <link rel="stylesheet" href="assets/application-8b441ae0.css" data-turbo-track="reload" />
-  <link rel="stylesheet" href="assets/tailwind-ab1cb9a8.css" data-turbo-track="reload" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "assets/application-bfcdf840.js",
-    "@hotwired/turbo-rails": "assets/turbo.min-ad2c7b86.js",
-    "@hotwired/stimulus": "assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "assets/stimulus-loading-1fc53fe7.js",
-    "controllers/application": "assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "assets/controllers/hello_controller-708796bd.js",
-    "controllers": "assets/controllers/index-ee64e1f1.js"
-  }
-}</script>
-  <link rel="modulepreload" href="assets/application-bfcdf840.js">
-  <link rel="modulepreload" href="assets/turbo.min-ad2c7b86.js">
-  <link rel="modulepreload" href="assets/stimulus.min-4b1e420e.js">
-  <link rel="modulepreload" href="assets/stimulus-loading-1fc53fe7.js">
-  <link rel="modulepreload" href="assets/controllers/application-3affb389.js">
-  <link rel="modulepreload" href="assets/controllers/hello_controller-708796bd.js">
-  <link rel="modulepreload" href="assets/controllers/index-ee64e1f1.js">
-  <script type="module">import "application"</script>
-  <script src="assets/js/translations.js"></script>
-  <script src="assets/js/animations.js" defer></script>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
+<body>
+  <nav class="nav" id="navbar"><div class="nav-inner"><a href="index.html" class="nav-logo"><span>ARSH</span><span>PREM</span></a><div class="nav-links"><a href="about.html" class="nav-link">[ ABOUT ME ]</a><a href="projects.html" class="nav-link">[ WORKS ]</a><a href="certificates.html" class="nav-link active">[ CERTIFICATES ]</a><a href="blog.html" class="nav-link">[ BLOG ]</a></div><a href="contact.html" class="nav-contact">CONTACT ME ↗</a><button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></nav>
+  <div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Works</a><a href="certificates.html">Certificates</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
 
-<body class="h-full anti-aliased selection:bg-primary selection:text-white overflow-x-hidden">
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 minimal-nav transition-all duration-300 glass">
-    <div class="container mx-auto px-6 h-24 flex items-center justify-between">
-      <!-- Logo -->
-      <a class="flex items-center gap-2 group" href="index.html">
-        <span class="text-3xl font-black tracking-tighter group-hover:opacity-70 transition-opacity">ARSH PREM</span>
-      </a>
-      <div class="hidden md:flex items-center space-x-12">
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="about.html" data-i18n="nav.about">About Me</a>
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="projects.html" data-i18n="nav.works">MY WORKs</a>
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="certificates.html" data-i18n="nav.certs">Certificates</a>
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="blog.html" data-i18n="nav.blog">Blog</a>
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <span class="page-header-label anim">02 — ACHIEVEMENTS</span>
+        <h1 class="page-header-title anim anim-delay-1">CERTIFICATES</h1>
+        <p class="page-header-desc anim anim-delay-2">Professional certifications earned through continuous learning and dedication.</p>
       </div>
-
-      <div class="flex items-center gap-4">
-        <!-- Language Toggle -->
-        <div class="flex items-center gap-2 text-sm">
-          <button onclick="setLanguage('en')" class="lang-btn hover:text-primary transition-colors"
-            data-lang="en">EN</button>
-          <span class="text-gray-300">|</span>
-          <button onclick="setLanguage('jp')" class="lang-btn hover:text-primary transition-colors text-gray-400"
-            data-lang="jp">JP</button>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-primary p-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+      <div id="certs-container" class="grid-3 anim anim-delay-3"></div>
     </div>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" style="background-color: white;"
-      class="hidden md:hidden absolute top-24 left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col space-y-4 shadow-lg z-50">
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="about.html" data-i18n="nav.about">About Me</a>
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="projects.html" data-i18n="nav.works">My Works</a>
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="certificates.html" data-i18n="nav.certs">Certificates</a>
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="blog.html" data-i18n="nav.blog">Blog</a>
-    </div>
-  </nav>
-
-  <main class="pt-24 min-h-screen">
-    <!-- BEGIN app/views/pages/certificates.html.erb
--->
-    <div class="space-y-20 py-10">
-      <!-- Page Header -->
-      <div class="space-y-4 max-w-3xl">
-        <div class="flex items-center gap-4 text-secondary fade-in">
-          <span class="w-12 h-[1px] bg-secondary"></span>
-          <span class="uppercase tracking-widest text-sm font-medium" data-i18n="certs.subheader">Achievements</span>
-        </div>
-        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary slide-up" data-i18n="certs.title">
-          Certificates
-        </h1>
-        <p class="text-secondary text-xl font-light max-w-2xl slide-up slide-up-delay-1" data-i18n="certs.desc">
-          Professional certifications and recognitions.
-        </p>
-      </div>
-
-      <!-- Certificates Grid -->
-      <div id="certificates-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-        <!-- Certificates will be loaded here dynamically -->
-      </div>
-    </div>
-    <!-- END app/views/pages/certificates.html.erb -->
   </main>
 
-  <footer class="border-t border-gray-100 py-12 mt-20 bg-tertiary">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+  <footer class="footer" style="margin-top: 4rem;"><div class="container-wide"><div class="footer-inner"><span class="footer-copy">© 2024 ARSH PREM</span><div class="footer-links"><a href="https://github.com/arshprem01" target="_blank" class="footer-link">GITHUB</a><a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank" class="footer-link">LINKEDIN</a></div></div></div></footer>
 
-      <div class="flex gap-6">
-        <a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank"
-          class="text-secondary hover:text-primary transition-colors text-sm uppercase">LinkedIn</a>
-        <a href="https://github.com/arshprem01" target="_blank"
-          class="text-secondary hover:text-primary transition-colors text-sm uppercase">GitHub</a>
-      </div>
-    </div>
-  </footer>
   <script>
-    function initMobileMenu() {
-      const mobileBtn = document.getElementById('mobile-menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileBtn && mobileMenu) {
-        const newBtn = mobileBtn.cloneNode(true);
-        mobileBtn.parentNode.replaceChild(newBtn, mobileBtn);
-        newBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          mobileMenu.classList.toggle('hidden');
-        });
-      }
-    }
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => { document.getElementById('mobile-menu')?.classList.toggle('open'); });
+    window.addEventListener('scroll', () => { document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 50); });
+    const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    document.querySelectorAll('.anim').forEach(el => obs.observe(el));
 
     function parseCSV(text) {
-      // Robust CSV parsing handling quotes and commas within quotes
-      const lines = text.split('\n');
-      const headers = lines[0].split(',').map(h => h.trim());
-      const data = [];
-
+      const lines = text.split('\n'), headers = lines[0].split(',').map(h => h.trim()), data = [];
       for (let i = 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (!line) continue;
-
-        const row = {};
-        let currentVal = '';
-        let inQuotes = false;
-        let colIndex = 0;
-
+        const line = lines[i].trim(); if (!line) continue;
+        const row = {}; let val = '', inQ = false, col = 0;
         for (let j = 0; j < line.length; j++) {
-          const char = line[j];
-
-          if (char === '"') {
-            inQuotes = !inQuotes;
-          } else if (char === ',' && !inQuotes) {
-            row[headers[colIndex]] = currentVal.trim().replace(/^"|"$/g, ''); // Remove surrounding quotes
-            currentVal = '';
-            colIndex++;
-          } else {
-            currentVal += char;
-          }
+          if (line[j] === '"') inQ = !inQ;
+          else if (line[j] === ',' && !inQ) { row[headers[col]] = val.trim().replace(/^"|"$/g, ''); val = ''; col++; }
+          else val += line[j];
         }
-        // Last column
-        if (colIndex < headers.length) {
-          row[headers[colIndex]] = currentVal.trim().replace(/^"|"$/g, '');
-        }
-
+        if (col < headers.length) row[headers[col]] = val.trim().replace(/^"|"$/g, '');
         data.push(row);
       }
       return data;
     }
 
-    function loadCertificates() {
-      const container = document.getElementById('certificates-container');
-      if (!container) return;
-
-      // Prevent double loading race condition
-      if (container.dataset.loading === "true") return;
-      container.dataset.loading = "true";
-
-      // Clear container to prevent duplicates on reload
-      container.innerHTML = '';
-
-      fetch('certificates.csv')
-        .then(response => {
-          if (!response.ok) throw new Error("Failed to load CSV");
-          return response.text();
-        })
-        .then(data => {
-          const certificates = parseCSV(data);
-
-          if (certificates.length === 0) {
-            container.innerHTML = '<p class="text-gray-500">No certificates found.</p>';
-            return;
-          }
-
-          certificates.forEach(cert => {
-            const imageSource = cert.Image ? cert.Image.trim() : '';
-            const lowerSource = imageSource.toLowerCase();
-            let imageHtml;
-
-            if (lowerSource.endsWith('.png') || lowerSource.endsWith('.jpg') || lowerSource.endsWith('.jpeg') || lowerSource.endsWith('.gif') || lowerSource.endsWith('.svg') || lowerSource.endsWith('.webp')) {
-              imageHtml = `<img src="${imageSource}" alt="${cert.Title}" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">`;
-            } else if (lowerSource.endsWith('.pdf')) {
-              imageHtml = `
-                    <div class="w-full h-full bg-red-50 group-hover:bg-red-100 transition-colors duration-500 relative flex flex-col items-center justify-center p-6 text-center">
-                        <svg class="w-12 h-12 text-red-500 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                        <span class="text-sm font-medium text-red-600">View PDF</span>
-                    </div>
-                 `;
-            } else {
-              imageHtml = `
-                    <div class="w-full h-full bg-gray-50 group-hover:bg-gray-100 transition-colors duration-500 relative flex items-center justify-center">
-                      <span class="text-4xl opacity-20 group-hover:opacity-40 transition-opacity">${cert.Image || 'CERT'}</span>
-                    </div>
-                `;
-            }
-
-            const card = `
-              <a href="${imageSource}" target="_blank" class="glass-card tilt-card spotlight p-4 rounded-lg group flex flex-col space-y-6 cursor-pointer block animate-on-scroll">
-                <div class="aspect-[4/3] bg-tertiary overflow-hidden border border-gray-100">
-                  ${imageHtml}
-                </div>
-                <div class="space-y-2">
-                  <div class="flex justify-between items-baseline border-b border-gray-200 pb-4 group-hover:border-primary transition-colors">
-                    <h3 class="text-xl font-bold text-primary max-w-[80%]">${cert.Title}</h3>
-                    <span class="text-sm text-secondary group-hover:text-primary transition-colors">${cert.Year}</span>
-                  </div>
-                  <div class="space-y-1">
-                    <p class="text-secondary font-medium uppercase tracking-wide text-xs">${cert.Issuer}</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">${cert.Description}</p>
-                  </div>
-                </div>
-              </a>
-            `;
-            container.innerHTML += card;
-          });
-        })
-        .catch(err => {
-          console.error('Error loading certificates:', err);
-          container.innerHTML = '<p class="text-red-500">Error loading certificates. Please check console.</p>';
-        })
-        .finally(() => {
-          container.dataset.loading = "false";
-          if (window.initAnimations) window.initAnimations();
-        });
-    }
-
-    // Initialize scripts
-    function init() {
-      initMobileMenu();
-      loadCertificates();
-    }
-
-    document.addEventListener('DOMContentLoaded', init);
-    document.addEventListener('turbo:load', init);
+    fetch('certificates.csv').then(r => r.text()).then(data => {
+      const certs = parseCSV(data), container = document.getElementById('certs-container');
+      certs.forEach(cert => {
+        const src = (cert.Image || '').trim(), ext = src.toLowerCase();
+        let imgHtml;
+        if (ext.endsWith('.png') || ext.endsWith('.jpg') || ext.endsWith('.jpeg') || ext.endsWith('.webp')) {
+          imgHtml = `<img src="${src}" alt="${cert.Title}" style="width:100%;height:100%;object-fit:contain;filter:grayscale(1);transition:filter 0.5s;">`;
+        } else if (ext.endsWith('.pdf')) {
+          imgHtml = `<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;background:var(--light-gray);"><span style="font-size:2rem;">📄</span><span class="font-mono" style="font-size:0.6rem;color:var(--dark-gray);text-transform:uppercase;">VIEW PDF</span></div>`;
+        } else {
+          imgHtml = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);"><span class="font-display" style="font-size:2rem;color:var(--mid-gray);">CERT</span></div>`;
+        }
+        container.innerHTML += `
+          <a href="${src}" target="_blank" class="card">
+            <div class="card-img-wrap" style="aspect-ratio:4/3;">${imgHtml}</div>
+            <div class="card-body">
+              <h3 class="card-title" style="font-size:0.95rem;">${cert.Title}</h3>
+              <div class="card-meta"><span class="card-category">${cert.Issuer || ''}</span><span class="card-year">${cert.Year || ''}</span></div>
+              <p style="font-size:0.75rem;color:var(--dark-gray);line-height:1.6;margin-top:0.5rem;">${cert.Description || ''}</p>
+            </div>
+          </a>`;
+      });
+    }).catch(e => console.error(e));
   </script>
 </body>
-
 </html>
-<!-- END app/views/layouts/application.html.erb -->

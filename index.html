@@ -1,227 +1,212 @@
 <!DOCTYPE html>
-<html class="h-full">
-
+<html lang="en">
 <head>
-  <title>Arsh | CS Portfolio</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Myweb">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="csrf-param" content="authenticity_token" />
-  <meta name="csrf-token"
-    content="1oYr7AgPlNMmvD_nGsqAW1XfdquKNBcLRxAX7-K37GL1AYF6rWBZSDz5dRI-uV_tKO9DTlOSPlQvuVqwW3sfLA" />
-
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsh Prem — Software Engineer</title>
+  <meta name="description" content="Arsh Prem — CS student & Software Engineer specialized in full-stack development, AI, and backend systems.">
   <link rel="icon" href="images/icon.png" type="image/png">
-  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="images/icon.png">
-
-  <link rel="stylesheet" href="assets/application-8b441ae0.css" data-turbo-track="reload" />
-  <link rel="stylesheet" href="assets/tailwind-ab1cb9a8.css" data-turbo-track="reload" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "assets/application-bfcdf840.js",
-    "@hotwired/turbo-rails": "assets/turbo.min-ad2c7b86.js",
-    "@hotwired/stimulus": "assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "assets/stimulus-loading-1fc53fe7.js",
-    "controllers/application": "assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "assets/controllers/hello_controller-708796bd.js",
-    "controllers": "assets/controllers/index-ee64e1f1.js"
-  }
-}</script>
-  <link rel="modulepreload" href="assets/application-bfcdf840.js">
-  <link rel="modulepreload" href="assets/turbo.min-ad2c7b86.js">
-  <link rel="modulepreload" href="assets/stimulus.min-4b1e420e.js">
-  <link rel="modulepreload" href="assets/stimulus-loading-1fc53fe7.js">
-  <link rel="modulepreload" href="assets/controllers/application-3affb389.js">
-  <link rel="modulepreload" href="assets/controllers/hello_controller-708796bd.js">
-  <link rel="modulepreload" href="assets/controllers/index-ee64e1f1.js">
-  <script type="module">import "application"</script>
-  <script src="assets/js/translations.js"></script>
-  <script src="assets/js/animations.js" defer></script>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
+<body>
 
-<body class="h-full anti-aliased selection:bg-primary selection:text-white overflow-x-hidden">
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 minimal-nav transition-all duration-300 glass">
-    <div class="container mx-auto px-6 h-24 flex items-center justify-between">
-      <!-- Logo -->
-      <a class="flex items-center gap-2 group" href="index.html">
-        <span class="text-3xl font-black tracking-tighter group-hover:opacity-70 transition-opacity">ARSH PREM</span>
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span>ARSH</span>
+        <span>PREM</span>
       </a>
-      <div class="hidden md:flex items-center space-x-12">
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="about.html" data-i18n="nav.about">About Me</a>
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="projects.html" data-i18n="nav.works">MY WORKs</a>
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="certificates.html" data-i18n="nav.certs">Certificates</a>
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="blog.html" data-i18n="nav.blog">Blog</a>
+      <div class="nav-links">
+        <a href="about.html" class="nav-link">[ ABOUT ME ]</a>
+        <a href="projects.html" class="nav-link">[ WORKS ]</a>
+        <a href="certificates.html" class="nav-link">[ CERTIFICATES ]</a>
+        <a href="blog.html" class="nav-link">[ BLOG ]</a>
       </div>
-
-      <div class="flex items-center gap-4">
-        <!-- Language Toggle -->
-        <div class="flex items-center gap-2 text-sm">
-          <button onclick="setLanguage('en')" class="lang-btn hover:text-primary transition-colors"
-            data-lang="en">EN</button>
-          <span class="text-gray-300">|</span>
-          <button onclick="setLanguage('jp')" class="lang-btn hover:text-primary transition-colors text-gray-400"
-            data-lang="jp">JP</button>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-primary p-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" style="background-color: white;"
-      class="hidden md:hidden absolute top-24 left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col space-y-4 shadow-lg z-50">
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="about.html" data-i18n="nav.about">About Me</a>
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="projects.html" data-i18n="nav.works">My Works</a>
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="certificates.html" data-i18n="nav.certs">Certificates</a>
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="blog.html" data-i18n="nav.blog">Blog</a>
+      <a href="contact.html" class="nav-contact" id="nav-contact-link">CONTACT ME ↗</a>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </div>
   </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Works</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-  <main class="pt-24 min-h-screen">
-    <!-- BEGIN app/views/pages/home.html.erb
--->
-    <div class="min-h-screen pt-24 flex flex-col md:flex-row items-stretch overflow-hidden bg-[#F8F8F8]">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container-wide">
 
-
-
-      <!-- Main Content Area -->
-      <div class="flex-1 grid grid-cols-1 lg:grid-cols-12 w-full">
-
-        <!-- Typography Column (Span 7) -->
-        <div class="lg:col-span-7 flex flex-col justify-start px-8 md:px-16 lg:px-24 pt-4 pb-12 relative z-20">
-
-          <!-- Stats -->
-          <div class="flex items-start gap-12 mb-20 pl-2 slide-up slide-up-delay-2">
-            <div>
-              <h3 class="text-2xl font-light text-primary">15+</h3>
-              <p class="text-[9px] text-gray-500 uppercase tracking-wide mt-1" data-i18n="stats.repos">Repositories</p>
-            </div>
-            <div>
-              <h3 class="text-2xl font-light text-primary">3+</h3>
-              <p class="text-[9px] text-gray-500 uppercase tracking-wide mt-1" data-i18n="stats.years">Years Coding</p>
-            </div>
-            <div>
-              <h3 class="text-2xl font-light text-primary">100%</h3>
-              <p class="text-[9px] text-gray-500 uppercase tracking-wide mt-1" data-i18n="stats.committed">Committed</p>
-            </div>
-          </div>
-
-          <!-- Intro Section -->
-          <div class="space-y-6 relative">
-            <div class="space-y-2">
-              <p class="text-sm font-medium text-gray-500 uppercase tracking-widest pl-1 fade-in"
-                data-i18n="hero.greeting">Hi,
-                I'm Arsh</p>
-              <h1
-                class="text-7xl xl:text-8xl font-semibold tracking-tighter text-[#1a1a1a] -ml-1 leading-tight slide-up"
-                data-i18n="hero.title">
-                <div
-                  class="reveal-text-container text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 animate-gradient">
-                  Software Engineer</div>
-              </h1>
-            </div>
-
-            <p class="text-lg text-gray-500 font-light max-w-xl leading-relaxed slide-up slide-up-delay-1"
-              data-i18n="hero.intro">
-              Hello, I'm <strong class="text-primary font-semibold">Arsh Prem</strong>, a software engineer passionate
-              about building scalable, production-ready applications. My core expertise lies in <strong
-                class="text-primary font-semibold">AI, backend, and full-stack
-                development</strong>.
-              <br /><br />
-              I thrive on <strong class="text-primary font-semibold">solving complex problems</strong>, transforming
-              innovative ideas into robust technical solutions, and driving impact within collaborative, high-growth
-              environments.
-            </p>
-
-            <!-- CTAs -->
-            <div class="pt-6 flex gap-6 slide-up slide-up-delay-3">
-              <a href="contact.html"
-                class="px-6 py-3 bg-[#1a1a1a] text-white text-xs uppercase tracking-widest font-medium hover:bg-black transition-colors"
-                data-i18n="nav.contact">
-                Contact Me
-              </a>
-              <a href="arsh_resume.pdf" target="_blank"
-                class="px-6 py-3 border border-gray-300 text-[#1a1a1a] text-xs uppercase tracking-widest font-medium hover:border-black transition-colors"
-                data-i18n="nav.resume">
-                Resume
-              </a>
-            </div>
-          </div>
-
-          <!-- Scroll Down -->
-
+      <!-- Massive Headline with Photo Overlapping -->
+      <div style="position: relative;">
+        <!-- Line 1: SOFTWARE -->
+        <div class="hero-headline anim" style="display: flex; align-items: flex-start;">
+          <span>SOFTWARE</span>
         </div>
 
-        <!-- Image Column (Span 5) -->
-        <div class="lg:col-span-5 relative flex items-end justify-center overflow-visible h-[50vh] lg:h-auto">
-          <div class="w-full h-full flex items-end justify-center relative">
-            <!-- Image scaled to fit bottom layout -->
-            <img
-              class="h-[85%] w-auto object-contain grayscale contrast-110 brightness-110 drop-shadow-2xl translate-y-12 fade-in delay-500 animate-float"
-              alt="Arsh Profile" src="assets/profile-48eebc30.png" />
+        <!-- Line 2: ENGI + PHOTO + NEER -->
+        <div class="hero-headline-row anim anim-delay-1">
+          <span class="hero-headline" style="display: inline;">ENGI</span>
+          <div class="hero-photo-container">
+            <img src="images/arsh-profile.png" alt="Arsh Prem" class="hero-photo" id="hero-photo">
           </div>
+          <span class="hero-headline" style="display: inline;">NEER</span>
+          <!-- Based in text -->
+          <span class="hero-subtitle anim anim-delay-2" style="position: absolute; right: 0; top: 1.5rem;">B A S E D  I N  I N D I A</span>
         </div>
-
       </div>
+
+      <!-- Services / Specialties -->
+      <div class="hero-services anim anim-delay-3" style="margin-top: 2rem;">
+        <span>/</span> FULL-STACK DEVELOPMENT<br>
+        <span>/</span> BACKEND ENGINEERING<br>
+        <span>/</span> AI & MACHINE LEARNING
+      </div>
+
+      <!-- Description -->
+      <p class="hero-description anim anim-delay-4">
+        I'm a computer science student & software engineer,<br>
+        who builds scalable, production-ready applications<br>
+        for projects of all sizes
+      </p>
+
     </div>
 
-    <!-- END app/views/pages/home.html.erb -->
-  </main>
+    <!-- Bottom Bar -->
+    <div class="hero-bottom">
+      <div class="hero-availability anim anim-delay-5">
+        AVAILABLE FOR COLLABORATION →<br>
+        <a href="mailto:arshprem01@gmail.com">arshprem01@gmail.com</a>
+      </div>
+      <div class="hero-recent anim anim-delay-5">
+        <span class="hero-recent-label">RECENT WORK →</span>
+        <div class="hero-recent-title">P2P FILE SHARING</div>
+      </div>
+    </div>
+  </section>
 
-  <footer class="border-t border-gray-100 py-12 mt-20 bg-tertiary">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+  <!-- Works Preview Section -->
+  <section class="section section-border">
+    <div class="container-wide">
+      <div class="section-header">
+        <div>
+          <span class="section-number anim">01</span>
+          <h2 class="section-title anim anim-delay-1">SELECTED<br>WORKS</h2>
+        </div>
+        <p class="section-subtitle anim anim-delay-2">
+          A curated collection of projects showcasing full-stack development, AI systems, and web applications.
+        </p>
+      </div>
 
-      <div class="flex gap-6">
-        <a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank"
-          class="text-secondary hover:text-primary transition-colors text-sm uppercase">LinkedIn</a>
-        <a href="https://github.com/arshprem01" target="_blank"
-          class="text-secondary hover:text-primary transition-colors text-sm uppercase">GitHub</a>
+      <div class="grid-3 anim anim-delay-3" id="featured-projects">
+        <!-- Loaded from CSV -->
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;" class="anim anim-delay-4">
+        <a href="projects.html" class="btn-ghost">VIEW ALL PROJECTS →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="section section-border">
+    <div class="container-wide">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;" class="about-preview-grid">
+        <div>
+          <span class="section-number anim">02</span>
+          <h2 class="section-title anim anim-delay-1">ABOUT</h2>
+          <p class="anim anim-delay-2" style="font-size: 0.95rem; color: var(--dark-gray); line-height: 1.9; margin-top: 2rem; max-width: 500px;">
+            Computer Science student at SRM Institute of Science and Technology with hands-on experience in backend development, 
+            distributed systems, and modern web technologies. I believe in writing code that is both performant and elegant.
+          </p>
+          <div style="margin-top: 2rem;" class="anim anim-delay-3">
+            <a href="about.html" class="btn-ghost">READ MORE →</a>
+          </div>
+        </div>
+        <div class="anim anim-delay-2">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span class="skill-pill">Ruby on Rails</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">React.js</span>
+            <span class="skill-pill">PostgreSQL</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">C++</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">Flutter</span>
+            <span class="skill-pill">SQLite</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-wide">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2024 ARSH PREM</span>
+        <div class="footer-links">
+          <a href="https://github.com/arshprem01" target="_blank" class="footer-link">GITHUB</a>
+          <a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank" class="footer-link">LINKEDIN</a>
+        </div>
       </div>
     </div>
   </footer>
+
   <script>
-    function initMobileMenu() {
-      const mobileBtn = document.getElementById('mobile-menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileBtn && mobileMenu) {
-        const newBtn = mobileBtn.cloneNode(true);
-        mobileBtn.parentNode.replaceChild(newBtn, mobileBtn);
-        newBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          mobileMenu.classList.toggle('hidden');
-        });
+    // Mobile menu
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.toggle('open');
+    });
+
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+    // Load featured projects  
+    fetch('projects.csv').then(r => r.text()).then(data => {
+      const rows = data.split('\n');
+      const container = document.getElementById('featured-projects');
+      for (let i = 1; i < Math.min(rows.length, 4); i++) {
+        if (!rows[i].trim()) continue;
+        const [title, year, category, image, link] = rows[i].split(',');
+        const imgHtml = image && image.includes('.') ?
+          `<img src="${image}" alt="${title}">` :
+          `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);"><span class="font-display" style="font-size:3rem;font-weight:900;color:var(--mid-gray);">${image || ''}</span></div>`;
+        container.innerHTML += `
+          <a href="${link}" target="_blank" class="card" id="project-card-${i}">
+            <div class="card-img-wrap">${imgHtml}</div>
+            <div class="card-body">
+              <h3 class="card-title">${title}</h3>
+              <div class="card-meta">
+                <span class="card-category">${category}</span>
+                <span class="card-year">${year}</span>
+              </div>
+              <div class="card-arrow">VIEW PROJECT →</div>
+            </div>
+          </a>`;
       }
-    }
-    document.addEventListener('DOMContentLoaded', initMobileMenu);
-    document.addEventListener('turbo:load', initMobileMenu);
+    }).catch(e => console.error(e));
+
+    // Responsive grid
+    const s = document.createElement('style');
+    s.textContent = '@media(max-width:768px){.about-preview-grid{grid-template-columns:1fr!important;}}';
+    document.head.appendChild(s);
   </script>
 </body>
-
 </html>
-<!-- END app/views/layouts/application.html.erb -->

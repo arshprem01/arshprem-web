@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARSH PREM // SOVEREIGN ARCHITECT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#2a2a2a",
+                        "surface-tint": "#3cd7ff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#281900",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#432c00",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed-dim": "#3cd7ff",
+                        "secondary-container": "#34ff8d",
+                        "on-primary-container": "#00586b",
+                        "primary-fixed": "#b4ebff",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed-variant": "#005228",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-fixed": "#ffdeae",
+                        "on-secondary-fixed": "#00210c",
+                        "inverse-primary": "#00677e",
+                        "secondary-fixed-dim": "#00e479",
+                        "on-primary-fixed": "#001f27",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed": "#60ff99",
+                        "on-secondary-container": "#007239",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#feb528",
+                        "outline-variant": "#3c494e",
+                        "inverse-on-surface": "#313030",
+                        "surface-variant": "#353534",
+                        "error-container": "#93000a",
+                        "secondary": "#f5fff3",
+                        "on-surface-variant": "#bbc9cf",
+                        "tertiary-fixed-dim": "#ffba3d",
+                        "on-primary": "#003642",
+                        "surface-bright": "#3a3939",
+                        "background": "#131313",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-container": "#6c4900",
+                        "surface": "#131313",
+                        "tertiary": "#ffd9a1",
+                        "outline": "#859398",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed-variant": "#004e5f",
+                        "on-secondary": "#003919",
+                        "primary-container": "#00d4ff",
+                        "primary": "#a8e8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #0e0e0e; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .glow-primary { text-shadow: 0 0 20px rgba(0, 212, 255, 0.4); }
+        .terminal-cursor::after { content: '|'; animation: blink 1s infinite; color: #34ff8d; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .mesh-gradient {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 212, 255, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(52, 255, 141, 0.03) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Implementation -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 max-w-full bg-surface/60 backdrop-blur-xl dark:bg-[#131313]/60 shadow-[0_60px_60px_-10px_rgba(0,212,255,0.08)] rounded-b-lg">
+<div class="text-2xl font-black tracking-[-0.04em] text-[#a8e8ff] dark:text-[#00d4ff] font-headline uppercase">
+            ARSH PREM
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-[#00d4ff] relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-[#00d4ff] after:rounded-full" href="#">Home</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-[#f5fff3]/70 hover:text-[#00d4ff] transition-colors hover:glow-primary duration-300" href="#">About</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-[#f5fff3]/70 hover:text-[#00d4ff] transition-colors hover:glow-primary duration-300" href="#">Projects</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-[#f5fff3]/70 hover:text-[#00d4ff] transition-colors hover:glow-primary duration-300" href="#">Certificates</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-[#f5fff3]/70 hover:text-[#00d4ff] transition-colors hover:glow-primary duration-300" href="#">Blog</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-[#f5fff3]/70 hover:text-[#00d4ff] transition-colors hover:glow-primary duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-headline font-bold uppercase tracking-wider scale-95 transition-transform duration-200 hover:scale-100">
+            Connect
+        </button>
+</nav>
+<!-- Hero Section -->
+<main class="relative min-h-screen flex flex-col justify-center items-start px-8 md:px-24 mesh-gradient overflow-hidden">
+<!-- Subtle Background Decorative Elements -->
+<div class="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-secondary-container/5 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Terminal Identifier -->
+<div class="mb-6 flex items-center gap-3">
+<span class="text-secondary font-mono text-[0.6875rem] tracking-[0.2em] uppercase bg-surface-container-low px-3 py-1 rounded">SYS.STATUS: ACTIVE</span>
+<div class="h-[1px] w-12 bg-outline-variant/30"></div>
+<span class="text-primary font-mono text-[0.6875rem] tracking-[0.2em] uppercase">V 3.0.4</span>
+</div>
+<!-- Massive Hero Text -->
+<h1 class="font-headline text-7xl md:text-[10rem] font-black leading-[0.85] tracking-[-0.06em] text-white mb-4">
+            ARSH PREM
+        </h1>
+<!-- Subtitle & Terminal Line -->
+<div class="flex items-center gap-4 mb-12">
+<span class="text-secondary-container font-mono text-xl md:text-2xl font-medium tracking-tight">
+                &gt; <span class="terminal-cursor">Software Engineer</span>
+</span>
+</div>
+<!-- CTA Buttons -->
+<div class="flex flex-wrap gap-4 mb-24">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-10 py-4 rounded font-headline font-bold uppercase tracking-widest text-sm hover:glow-primary transition-all duration-300 transform hover:-translate-y-1">
+                Contact Me
+            </button>
+<button class="border border-outline-variant/30 text-secondary px-10 py-4 rounded font-headline font-bold uppercase tracking-widest text-sm hover:border-secondary-container/50 transition-all duration-300 transform hover:-translate-y-1 bg-surface/20 backdrop-blur-sm">
+                Resume
+            </button>
+</div>
+<!-- Stats Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1 w-full max-w-5xl bg-outline-variant/10 p-[1px]">
+<div class="bg-surface-container-low p-8 flex flex-col justify-between group">
+<div class="text-primary-container mb-4">
+<span class="material-symbols-outlined text-4xl" data-icon="terminal">terminal</span>
+</div>
+<div>
+<div class="text-4xl font-headline font-black text-white group-hover:text-primary transition-colors">15+</div>
+<div class="text-on-surface-variant font-mono text-[0.6875rem] tracking-widest uppercase">Repositories</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 flex flex-col justify-between group">
+<div class="text-secondary-container mb-4">
+<span class="material-symbols-outlined text-4xl" data-icon="code" style="font-variation-settings: 'FILL' 1;">code</span>
+</div>
+<div>
+<div class="text-4xl font-headline font-black text-white group-hover:text-secondary-container transition-colors">3+</div>
+<div class="text-on-surface-variant font-mono text-[0.6875rem] tracking-widest uppercase">Years Coding</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 flex flex-col justify-between group">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-4xl" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<div class="text-4xl font-headline font-black text-white group-hover:text-primary transition-colors">100%</div>
+<div class="text-on-surface-variant font-mono text-[0.6875rem] tracking-widest uppercase">Committed</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Project Preview (Visual Anchor) -->
+<section class="bg-surface-container-lowest px-8 md:px-24 py-20 relative border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<div class="font-mono text-secondary-container text-xs tracking-[0.3em] uppercase">_ Featured Architecture</div>
+<h2 class="font-headline text-5xl font-extrabold text-white leading-tight tracking-tighter">
+                    Crafting Sovereign <br/> Digital Ecosystems
+                </h2>
+<p class="text-on-surface-variant max-w-md leading-relaxed">
+                    Specializing in high-performance distributed systems and cinematic user interfaces. Every line of code is a structural choice in a larger narrative.
+                </p>
+<div class="pt-4">
+<a class="text-primary-container font-headline font-bold tracking-widest uppercase text-xs flex items-center gap-2 group" href="#">
+                        [ Explore Projects ]
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-video bg-surface-container rounded-lg overflow-hidden border border-outline-variant/10 shadow-2xl">
+<img class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" data-alt="Abstract cinematic visualization of computer code flowing through a 3D dark space with glowing cyan and green light trails" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYakDjyl4jb7KpTz1IcnE8vtbw2xZTsRcezUmzJJQhxg8m1ObTAWkgbjt6FA2H04pFzpFFVhouUpg5_vORDKmnbErbL6BftVS5QZRcu85tEhD1_82q2tY-aqiELynfqY0Ej6a4gcEexUB4ZhzxFdec3BjvUVqQv_-qsRZqD_jdQshfFGwdyvRgkLqlpgmhZpAMNzxdoAz8QPUmYYOp-8D209org28-Ge-3t0NTGTE7oA6rnXAHsekQLRtCoer3hLWI_JuPBcXpXaS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-primary-container p-6 rounded-lg hidden md:block shadow-xl">
+<span class="material-symbols-outlined text-on-primary-container text-4xl" data-icon="deployed_code" style="font-variation-settings: 'FILL' 1;">deployed_code</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Implementation -->
+<footer class="w-full px-12 py-8 flex flex-col md:flex-row justify-between items-center bg-[#0e0e0e] border-t border-[#3c494e]/15">
+<div class="font-mono text-[0.6875rem] tracking-widest uppercase text-[#34ff8d]">
+            © 2024 ARSH PREM // SOVEREIGN ARCHITECT
+        </div>
+<div class="flex gap-8 mt-6 md:mt-0">
+<a class="font-mono text-[0.6875rem] tracking-widest uppercase text-[#f5fff3]/50 hover:text-[#34ff8d] transition-transform hover:translate-x-1 cursor-pointer" href="#">GitHub</a>
+<a class="font-mono text-[0.6875rem] tracking-widest uppercase text-[#f5fff3]/50 hover:text-[#34ff8d] transition-transform hover:translate-x-1 cursor-pointer" href="#">LinkedIn</a>
+<a class="font-mono text-[0.6875rem] tracking-widest uppercase text-[#f5fff3]/50 hover:text-[#34ff8d] transition-transform hover:translate-x-1 cursor-pointer" href="#">Twitter</a>
+<a class="font-mono text-[0.6875rem] tracking-widest uppercase text-[#f5fff3]/50 hover:text-[#34ff8d] transition-transform hover:translate-x-1 cursor-pointer" href="#">Terminal</a>
+</div>
+</footer>
+</body></html>

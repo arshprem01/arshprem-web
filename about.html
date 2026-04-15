@@ -1,294 +1,130 @@
 <!DOCTYPE html>
-<html class="h-full">
-
+<html lang="en">
 <head>
-  <title>Arsh | CS Portfolio</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Myweb">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="csrf-param" content="authenticity_token" />
-  <meta name="csrf-token"
-    content="7Sw6ce-aMvyzPfEk82ghXAvuG5y8VZLsTz5LYaFix0XOq5DnSvX_Z6l4u9HXG_7qdt4ueWXzu7MnlwY-GK40Cw" />
-
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Arsh Prem</title>
+  <meta name="description" content="Learn about Arsh Prem — CS student, software engineer.">
   <link rel="icon" href="images/icon.png" type="image/png">
-  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="images/icon.png">
-
-  <link rel="stylesheet" href="assets/application-8b441ae0.css" data-turbo-track="reload" />
-  <link rel="stylesheet" href="assets/tailwind-ab1cb9a8.css" data-turbo-track="reload" />
-  <script type="importmap" data-turbo-track="reload">{
-  "imports": {
-    "application": "assets/application-bfcdf840.js",
-    "@hotwired/turbo-rails": "assets/turbo.min-ad2c7b86.js",
-    "@hotwired/stimulus": "assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "assets/stimulus-loading-1fc53fe7.js",
-    "controllers/application": "assets/controllers/application-3affb389.js",
-    "controllers/hello_controller": "assets/controllers/hello_controller-708796bd.js",
-    "controllers": "assets/controllers/index-ee64e1f1.js"
-  }
-}</script>
-  <link rel="modulepreload" href="assets/application-bfcdf840.js">
-  <link rel="modulepreload" href="assets/turbo.min-ad2c7b86.js">
-  <link rel="modulepreload" href="assets/stimulus.min-4b1e420e.js">
-  <link rel="modulepreload" href="assets/stimulus-loading-1fc53fe7.js">
-  <link rel="modulepreload" href="assets/controllers/application-3affb389.js">
-  <link rel="modulepreload" href="assets/controllers/hello_controller-708796bd.js">
-  <link rel="modulepreload" href="assets/controllers/index-ee64e1f1.js">
-  <script type="module">import "application"</script>
-  <script src="assets/js/translations.js"></script>
-  <script src="assets/js/animations.js" defer></script>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
+<body>
+  <nav class="nav" id="navbar"><div class="nav-inner"><a href="index.html" class="nav-logo"><span>ARSH</span><span>PREM</span></a><div class="nav-links"><a href="about.html" class="nav-link active">[ ABOUT ME ]</a><a href="projects.html" class="nav-link">[ WORKS ]</a><a href="certificates.html" class="nav-link">[ CERTIFICATES ]</a><a href="blog.html" class="nav-link">[ BLOG ]</a></div><a href="contact.html" class="nav-contact">CONTACT ME ↗</a><button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></nav>
+  <div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Works</a><a href="certificates.html">Certificates</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
 
-<body class="h-full anti-aliased selection:bg-primary selection:text-white overflow-x-hidden">
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 minimal-nav transition-all duration-300 glass">
-    <div class="container mx-auto px-6 h-24 flex items-center justify-between">
-      <!-- Logo -->
-      <a class="flex items-center gap-2 group" href="index.html">
-        <span class="text-3xl font-black tracking-tighter group-hover:opacity-70 transition-opacity">ARSH PREM</span>
-      </a>
-      <div class="hidden md:flex items-center space-x-12">
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="about.html" data-i18n="nav.about">About Me</a>
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="projects.html" data-i18n="nav.works">MY WORKs</a>
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="certificates.html" data-i18n="nav.certs">Certificates</a>
-        <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-          href="blog.html" data-i18n="nav.blog">Blog</a>
+  <main>
+    <div class="container">
+      <!-- Hero -->
+      <div class="page-header">
+        <span class="page-header-label anim">01 — IDENTITY</span>
+        <h1 class="page-header-title anim anim-delay-1">ABOUT ME</h1>
       </div>
 
-      <div class="flex items-center gap-4">
-        <!-- Language Toggle -->
-        <div class="flex items-center gap-2 text-sm">
-          <button onclick="setLanguage('en')" class="lang-btn hover:text-primary transition-colors"
-            data-lang="en">EN</button>
-          <span class="text-gray-300">|</span>
-          <button onclick="setLanguage('jp')" class="lang-btn hover:text-primary transition-colors text-gray-400"
-            data-lang="jp">JP</button>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-primary p-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" style="background-color: white;"
-      class="hidden md:hidden absolute top-24 left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col space-y-4 shadow-lg z-50">
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="about.html" data-i18n="nav.about">About Me</a>
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="projects.html" data-i18n="nav.works">My Works</a>
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="certificates.html" data-i18n="nav.certs">Certificates</a>
-      <a class="text-secondary hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase"
-        href="blog.html" data-i18n="nav.blog">Blog</a>
-    </div>
-  </nav>
-
-  <main class="pt-24 min-h-screen">
-    <!-- BEGIN app/views/pages/about.html.erb
--->
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 py-10">
-
-      <!-- Sidebar / Role Title -->
-      <div class="md:col-span-4 lg:col-span-3 space-y-8 md:sticky md:top-32 self-start">
-
-
+      <!-- Bio Grid -->
+      <section class="about-hero-grid" style="margin-bottom: 5rem;">
         <div>
-          <h2 class="text-sm uppercase tracking-widest text-secondary font-medium mb-2" data-i18n="about.connect">
-            Connect</h2>
-          <div class="flex flex-col gap-2 pl-4">
-            <a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank"
-              class="no-underline text-secondary hover:text-primary transition-colors">LinkedIn</a>
-            <a href="https://github.com/arshprem01" target="_blank"
-              class="no-underline text-secondary hover:text-primary transition-colors">GitHub</a>
+          <p class="anim anim-delay-2" style="font-size: 1.1rem; color: var(--charcoal); line-height: 1.9; margin-bottom: 1.5rem;">
+            Software engineer specializing in <strong>high-performance systems</strong> and full-stack development.
+            I bridge the gap between efficient backend architectures and elegant user interfaces.
+          </p>
+          <p class="anim anim-delay-3" style="font-size: 0.95rem; color: var(--dark-gray); line-height: 1.9;">
+            Currently pursuing B.Tech in Computer Science at SRM Institute of Science and Technology (CGPA: 8.16).
+            My approach to software development centers on vertical integration — understanding the system 
+            from the metal up to the pixel.
+          </p>
+          <div style="margin-top: 2rem;" class="anim anim-delay-4">
+            <a href="arsh_resume.pdf" target="_blank" class="btn-primary">DOWNLOAD CV ↓</a>
           </div>
         </div>
-      </div>
-
-      <!-- Main Content -->
-      <div class="md:col-span-8 lg:col-span-9 space-y-24">
-
-        <!-- Bio -->
-        <section>
-          <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary mb-12 slide-up"
-            data-i18n="about.title">
-            About Me
-          </h1>
-          <div
-            class="text-xl md:text-2xl leading-relaxed text-secondary font-light space-y-8 max-w-3xl slide-up slide-up-delay-1">
-            <p class="text-primary" data-i18n="about.bio1">
-              Hi! I'm Arsh. I believe that good code is like good design — invisible but powerful.
-            </p>
-            <p data-i18n="about.bio2">
-              My journey into coding started with curiosity and has evolved into a disciplined pursuit of building
-              scalable, user-centric applications. I combine technical depth in Ruby on Rails and React with a sharp eye
-              for minimalist aesthetics.
-            </p>
+        <div class="anim anim-delay-2">
+          <div style="overflow:hidden; border: 1px solid var(--border);">
+            <img src="images/arsh-profile.png" alt="Arsh Prem" style="width:100%; filter: grayscale(1) contrast(1.1);">
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Experience -->
-        <section class="border-t border-gray-200 pt-16">
-          <h2 class="text-3xl font-bold text-primary mb-12" data-i18n="about.exp.title">Experience</h2>
-
-          <div class="space-y-12">
-            <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all animate-on-scroll">
-              <div class="text-secondary font-mono text-sm">2023 - 2027</div>
-              <div class="md:col-span-3 space-y-2">
-                <h3 class="text-xl font-bold text-primary" data-i18n="exp.student">B.Tech in Computer Science</h3>
-                <p class="text-secondary">SRM Institute of Science and Technology</p>
-                <p class="text-gray-500 mt-2 text-sm">CGPA: 8.16</p>
-              </div>
-            </div>
-
-            <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all animate-on-scroll">
-              <div class="text-secondary font-mono text-sm">Dec 2025 - Jan 2026</div>
-              <div class="md:col-span-3 space-y-2">
-                <h3 class="text-xl font-bold text-primary" data-i18n="exp.intern1">Software Engineer Intern</h3>
-                <p class="text-secondary">Blubirch</p>
-                <p class="text-gray-500 mt-2 text-sm max-w-xl">
-                  Worked on backend development using Ruby on Rails and RESTful APIs, contributing to internal IT
-                  systems and application features.
-                </p>
-              </div>
-            </div>
-
-            <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all animate-on-scroll">
-              <div class="text-secondary font-mono text-sm">June 2025 - July 2025</div>
-              <div class="md:col-span-3 space-y-2">
-                <h3 class="text-xl font-bold text-primary" data-i18n="exp.intern2">Tech Intern</h3>
-                <p class="text-secondary">Youth for Seva</p>
-                <p class="text-gray-500 mt-2 text-sm max-w-xl">
-                  Contributed to development and enhancement of technical features supporting organizational workflows.
-                  Collaborated with cross-functional teams to analyze requirements.
-                </p>
-              </div>
-            </div>
-
-            <div class="group grid grid-cols-1 md:grid-cols-4 gap-4 transition-all animate-on-scroll">
-              <div class="text-secondary font-mono text-sm">Jan 2025 - Present</div>
-              <div class="md:col-span-3 space-y-2">
-                <h3 class="text-xl font-bold text-primary" data-i18n="exp.mun">President, Model United Nations (MUN)
-                  Club</h3>
-                <p class="text-secondary">SRM Institute of Science and Technology</p>
-                <p class="text-gray-500 mt-2 text-sm max-w-xl">
-                  Led organization of MUN conferences, debates, and training sessions; managed core team and coordinated
-                  inter-departmental activities.
-                </p>
-              </div>
-            </div>
+      <!-- Experience -->
+      <section class="section section-border">
+        <div class="section-header">
+          <div>
+            <span class="section-number anim">02</span>
+            <h2 class="section-title anim anim-delay-1">EXPERIENCE</h2>
           </div>
-        </section>
-
-        <!-- Skills -->
-        <section class="border-t border-gray-200 pt-16">
-          <h2 class="text-3xl font-bold text-primary mb-12 animate-on-scroll" data-i18n="about.skills.title">Technical
-            Skills</h2>
-          <div class="flex flex-wrap gap-4 animate-on-scroll">
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              Ruby on Rails
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              Node.js
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              JavaScript
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              React.js
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              PostgreSQL
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              SQLite
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              Python
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              Java
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              C++
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              Docker
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              Git
-            </span>
-            <span
-              class="px-6 py-3 border border-gray-200 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-              Antigravity
-            </span>
+        </div>
+        <div class="exp-list">
+          <div class="exp-item anim">
+            <span class="exp-date">2023 — 2027</span>
+            <div class="exp-title">B.Tech Computer Science<br><span style="font-weight:400;font-size:0.85rem;color:var(--dark-gray);">SRM Institute of Science and Technology</span></div>
+            <p class="exp-desc">Specializing in AI, backend systems, and algorithmic complexity. CGPA: 8.16.</p>
           </div>
-        </section>
+          <div class="exp-item anim anim-delay-1">
+            <span class="exp-date">DEC 2025 — JAN 2026</span>
+            <div class="exp-title">Software Engineer Intern<br><span style="font-weight:400;font-size:0.85rem;color:var(--dark-gray);">Blubirch</span></div>
+            <p class="exp-desc">Backend development with Ruby on Rails, RESTful API design, and performance optimization.</p>
+          </div>
+          <div class="exp-item anim anim-delay-2">
+            <span class="exp-date">JUN 2025 — JUL 2025</span>
+            <div class="exp-title">Tech Intern<br><span style="font-weight:400;font-size:0.85rem;color:var(--dark-gray);">Youth for Seva</span></div>
+            <p class="exp-desc">Built technical features supporting organizational workflows and community impact tracking.</p>
+          </div>
+          <div class="exp-item anim anim-delay-3">
+            <span class="exp-date">JAN 2025 — PRESENT</span>
+            <div class="exp-title">President, MUN Club<br><span style="font-weight:400;font-size:0.85rem;color:var(--dark-gray);">SRM University</span></div>
+            <p class="exp-desc">Managing 40+ members, organizing international conferences and debate forums.</p>
+          </div>
+        </div>
+      </section>
 
-      </div>
+      <!-- Skills -->
+      <section class="section section-border">
+        <div class="section-header">
+          <div>
+            <span class="section-number anim">03</span>
+            <h2 class="section-title anim anim-delay-1">TECH STACK</h2>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;" class="anim anim-delay-2">
+          <span class="skill-pill">Ruby on Rails</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">React.js</span>
+          <span class="skill-pill">PostgreSQL</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Java</span>
+          <span class="skill-pill">C++</span>
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">Git</span>
+          <span class="skill-pill">Flutter</span>
+          <span class="skill-pill">SQLite</span>
+          <span class="skill-pill">HTML / CSS</span>
+          <span class="skill-pill">REST APIs</span>
+        </div>
+      </section>
+
+      <!-- Connect -->
+      <section class="section section-border" style="padding-bottom: 3rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem;" class="anim">
+          <div>
+            <span class="section-number">04</span>
+            <h2 class="section-title" style="margin-top: 0.5rem;">LET'S CONNECT</h2>
+          </div>
+          <div style="display: flex; gap: 1.5rem;">
+            <a href="https://github.com/arshprem01" target="_blank" class="btn-ghost">GITHUB ↗</a>
+            <a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank" class="btn-ghost">LINKEDIN ↗</a>
+            <a href="contact.html" class="btn-primary">CONTACT →</a>
+          </div>
+        </div>
+      </section>
     </div>
-
-    <!-- END app/views/pages/about.html.erb -->
   </main>
 
-  <footer class="border-t border-gray-100 py-12 mt-20 bg-tertiary">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+  <footer class="footer"><div class="container-wide"><div class="footer-inner"><span class="footer-copy">© 2024 ARSH PREM</span><div class="footer-links"><a href="https://github.com/arshprem01" target="_blank" class="footer-link">GITHUB</a><a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank" class="footer-link">LINKEDIN</a></div></div></div></footer>
 
-      <div class="flex gap-6">
-        <a href="https://www.linkedin.com/in/arsh-prem-0606542b7" target="_blank"
-          class="text-secondary hover:text-primary transition-colors text-sm uppercase">LinkedIn</a>
-        <a href="https://github.com/arshprem01" target="_blank"
-          class="text-secondary hover:text-primary transition-colors text-sm uppercase">GitHub</a>
-      </div>
-    </div>
-  </footer>
   <script>
-    function initMobileMenu() {
-      const mobileBtn = document.getElementById('mobile-menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileBtn && mobileMenu) {
-        const newBtn = mobileBtn.cloneNode(true);
-        mobileBtn.parentNode.replaceChild(newBtn, mobileBtn);
-        newBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          mobileMenu.classList.toggle('hidden');
-        });
-      }
-    }
-    document.addEventListener('DOMContentLoaded', initMobileMenu);
-    document.addEventListener('turbo:load', initMobileMenu);
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => { document.getElementById('mobile-menu')?.classList.toggle('open'); });
+    window.addEventListener('scroll', () => { document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 50); });
+    const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.anim').forEach(el => obs.observe(el));
   </script>
 </body>
-
 </html>
-<!-- END app/views/layouts/application.html.erb -->
