@@ -74,7 +74,7 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(242, 242, 240, 0.85);
+  background: rgba(242, 242, 240, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: all 0.3s ease;
@@ -118,7 +118,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--dark-gray);
+  color: var(--charcoal);
   padding: 0.4rem 0;
   position: relative;
 }
